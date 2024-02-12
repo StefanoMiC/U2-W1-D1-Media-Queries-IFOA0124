@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries examples</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            padding: 1rem;
+            background-color: antiquewhite;
+        }
+
+        /* media queries mettiamole in fondo per sicurezza (per essere sicuri che applichino i valori che specifichiamo) */
+
+
+        /* 
+        0px fino a ... 430px | 
+        */
+
+        @media screen and (max-width: 430px) {
+            button.btn {
+                background: crimson;
+            }
+        }
+
+        /* 
+        | 500px ---- infinito
+        */
+        @media screen and (min-width: 500px) {
+            main {
+                max-width: 500px;
+                padding: 3rem;
+                margin-inline: auto;
+                text-align: center;
+            }
+
+            main h1 {
+                font-size: 28px;
+            }
+        }
+
+        /* 
+        | 1024px ----> infinito 
+        */
+
+        @media screen and (min-width: 1024px) {
+            main {
+                max-width: 800px;
+            }
+
+            main h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            main {
+
+                max-width: 1100px;
+            }
+        }
+
+        /* range da...a
+        | 1200px ----> 1399px
+        */
+
+        @media screen and (min-width: 1200px) and (max-width: 1399px) {
+            main {
+                background-color: paleturquoise;
+            }
+        }
+
+        /* regola per la stampa */
+        @media print {
+
+            body {
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            main h1 {
+                /* background-color: transparent */
+                font-size: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <h1>Titolo della pagina</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore maiores magnam dicta obcaecati fuga quod
+            beatae
+            voluptates nisi qui, sed voluptatem est corporis accusamus optio officiis unde cum quidem rem.</p>
+        <button class="btn">Accedi</button>
+
+    </main>
+</body>
+
+</html>
